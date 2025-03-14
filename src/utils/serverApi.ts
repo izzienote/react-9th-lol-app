@@ -1,7 +1,7 @@
 import { ItemType } from "@/types/Item";
 
-const CHAMPIONS_BASE_URL = `${process.env.NEXT_PUBLIC_CHAMPION_URL}`;
-const ITEMS_BASE_URL = `${process.env.NEXT_PUBLIC_ITEM_URL}`;
+export const CHAMPIONS_BASE_URL = `${process.env.NEXT_PUBLIC_CHAMPION_URL}`;
+export const ITEMS_BASE_URL = `${process.env.NEXT_PUBLIC_ITEM_URL}`;
 
 // [1] 챔피언 목록 데이터 (ISR)
 export const fetchChampionList = async () => {

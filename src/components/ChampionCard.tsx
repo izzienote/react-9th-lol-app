@@ -17,6 +17,7 @@ const ChampionCard = ({ data }: ChampionProps) => {
             height={100}
             src={`${CHAMPION_IMAGE_URL}${data.image.full}`}
             alt="챔피언 이미지"
+            priority
           />
         </figure>
         <div className="text-red-500">{data.name}</div>
