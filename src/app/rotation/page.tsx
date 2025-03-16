@@ -1,37 +1,18 @@
 "use client";
 
 import ChampionCard from "@/components/ChampionCard";
-import { CHAMPIONS_BASE_URL } from "@/utils/serverApi";
-import { useQuery } from "@tanstack/react-query";
+import { useChampionRotationList, useChampions } from "@/hooks/queries";
 
 const ChampionRotation = () => {
   // [1] 챔피언 리스트 데이터 (key값과 일치하는 데이터를 가져오기 위해서 받아옴)
-  const {
-    data: championList,
-    isPending,
-    isError,
-  } = useQuery<Champion[]>({
-    queryKey: ["ChampionList"],
-    queryFn: async () => {
-      const res = await fetch(CHAMPIONS_BASE_URL);
-      const { data }: { data: Champion[] } = await res.json();
-      return Object.values(data);
-    },
-  });
+  const { data: championList, isPending, isError } = useChampions();
 
   // [2] 이번주 무료 챔피언 키값 가져오기
   const {
     data: championRotationList,
     isPending: isPendingRotation,
     isError: isErrorRotation,
-  } = useQuery({
-    queryKey: ["ChampionRotationList"],
-    queryFn: async () => {
-      const res = await fetch("/api");
-      const { data } = await res.json();
-      return data.freeChampionIds;
-    },
-  });
+  } = useChampionRotationList();
 
   // isPending, isError 처리로 undefined 안뜨도록 설정
   if (isPending || isPendingRotation) {
@@ -43,11 +24,10 @@ const ChampionRotation = () => {
   }
 
   // [3] 이번주 무료챔피언에 있는 키값과 일치하는 데이터 반환하기
-  const freeChampions = championList.filter((champion) =>
-    championRotationList?.includes(parseInt(champion.key))
+  const freeChampions = championList.filter(
+    (champion) => championRotationList.includes(parseInt(champion.key))
+    //넘버와 문자열(숫자로 변환)로 된 key값 통일해서 비교
   );
-
-  console.log(freeChampions);
 
   return (
     <div className=" bg-black">

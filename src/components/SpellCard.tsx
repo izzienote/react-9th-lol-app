@@ -1,4 +1,5 @@
 import { SKILL_IMAGE_URL } from "@/constants";
+import { ChampionSpell } from "@/types/Champion";
 import Image from "next/image";
 import React from "react";
 

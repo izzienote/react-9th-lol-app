@@ -1,4 +1,5 @@
 import { CHAMPION_IMAGE_URL } from "@/constants";
+import { Champion } from "@/types/Champion";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

@@ -1,4 +1,4 @@
-type Champion = {
+export type Champion = {
   version: string;
   id: string;
   key: string;
@@ -52,7 +52,7 @@ type Stats = {
   attackspeed: number;
 };
 //챔피언 디테일 페이지용 타입
-type ChampionDetail = {
+export type ChampionDetail = {
   id: string;
   key: string;
   name: string;
@@ -63,7 +63,7 @@ type ChampionDetail = {
   spells: ChampionSpell[];
 };
 //챔피언 디테일 페이지용 스펠
-type ChampionSpell = {
+export type ChampionSpell = {
   id: string;
   name: string;
   description: string;

@@ -1,3 +1,4 @@
+import { Champion, ChampionDetail } from "@/types/Champion";
 import { ItemType } from "@/types/Item";
 
 export const CHAMPIONS_BASE_URL = `${process.env.NEXT_PUBLIC_CHAMPION_URL}`;
