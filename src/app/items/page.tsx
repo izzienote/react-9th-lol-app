@@ -1,5 +1,11 @@
 import ItemCard from "@/components/ItemCard";
 import { fetchItemList } from "@/utils/serverApi";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "아이템 목록 페이지",
+  description: "모든 아이템 목록을 확인할 수 있습니다",
+};
 
 const ItemList = async () => {
   // 아이템 목록 데이터 가져오기 (SSG)

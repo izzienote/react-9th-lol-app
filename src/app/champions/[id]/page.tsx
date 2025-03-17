@@ -1,16 +1,21 @@
 import SpellCard from "@/components/SpellCard";
 import { fetchChampionDetail } from "@/utils/serverApi";
+import { Metadata } from "next";
 import Image from "next/image";
 
-type Props = {
+export type Props = {
   params: {
     id: string;
   };
 };
 
+export const metadata: Metadata = {
+  title: "챔피언 상세 페이지",
+  description: "선택한 챔피언의 상세정보를 확인할 수 있습니다",
+};
+
 const ChampionDetailPage = async ({ params }: Props) => {
   const fetchData = await fetchChampionDetail(params.id);
-  console.log(fetchData);
 
   return (
     <div className="bg-black">

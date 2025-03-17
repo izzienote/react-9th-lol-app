@@ -1,5 +1,11 @@
 import ChampionCard from "@/components/ChampionCard";
 import { fetchChampionList } from "@/utils/serverApi";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "챔피언 목록 페이지",
+  description: "모든 챔피언 목록을 확인할 수 있습니다",
+};
 
 const ChampionList = async () => {
   // 챔피언 데이터 가져오기 (ISR)

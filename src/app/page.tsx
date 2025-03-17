@@ -10,6 +10,10 @@ const imageSize = {
   lg: 900,
 };
 
+const CHAMPION_PAGE = "/champions";
+const ROTATION_PAGE = "/rotation";
+const ITEM_PAGE = "/items";
+
 export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center bg-black gap-5">
@@ -17,7 +21,7 @@ export default function Home() {
       <p className="text-gray-500">
         Riot Games API를 활용하여 챔피언과 아이템 정보를 제공합니다.
       </p>
-      <Link href={"/champions"}>
+      <Link href={CHAMPION_PAGE}>
         <Image
           width={imageSize.md}
           src={ChampionListImage}
@@ -26,7 +30,7 @@ export default function Home() {
         <div className="text-white">챔피언 목록보기</div>
       </Link>
 
-      <Link href={"/rotation"}>
+      <Link href={ROTATION_PAGE}>
         <Image
           width={imageSize.md}
           src={ItemListImage}
@@ -35,7 +39,7 @@ export default function Home() {
         <div className="text-white">금주 로테이션 확인</div>
       </Link>
 
-      <Link href={"/items"}>
+      <Link href={ITEM_PAGE}>
         <Image
           width={imageSize.md}
           src={ChampionRotationImage}
