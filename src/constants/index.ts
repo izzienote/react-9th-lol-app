@@ -11,3 +11,7 @@ export const CHAMPION_IMAGE_URL =
   "https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/";
 export const SKILL_IMAGE_URL =
   "https://ddragon.leagueoflegends.com/cdn/15.5.1/img/spell/";
+
+// [3] 라우트 핸들러에서 요청하는 로테이션 URL
+export const REQUEST_URL =
+  "https://br1.api.riotgames.com/lol/platform/v3/champion-rotations";

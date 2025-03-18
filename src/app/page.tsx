@@ -4,6 +4,7 @@ import ItemListImage from "../public/lol2.jpg";
 import ChampionRotationImage from "../public/lol1.jpg";
 import Link from "next/link";
 import { CHAMPION_PAGE, ITEM_PAGE, ROTATION_PAGE } from "@/constants";
+import DarkModeButton from "@/components/DarkModeButton";
 
 const imageSize = {
   sm: 300,
@@ -55,6 +56,8 @@ export default function Home() {
           게임 아이템 정보보기
         </div>
       </Link>
+
+      <DarkModeButton />
     </div>
   );
 }
