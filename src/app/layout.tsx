@@ -3,6 +3,12 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
 import Provider from "./provider";
+import {
+  CHAMPION_PAGE,
+  HOME_PAGE,
+  ITEM_PAGE,
+  ROTATION_PAGE,
+} from "@/constants";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,15 +32,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="flex justify-around bg-slate-800 text-white py-3">
-          <Link href={"/"}>홈</Link>
-          <Link href={"/champions"}>챔피언 목록</Link>
-          <Link href={"/items"}>아이템 목록</Link>
-          <Link href={"/rotation"}>챔피언 로테이션</Link>
+        <header className="flex justify-around bg-darkblue text-white py-3">
+          <Link href={HOME_PAGE}>홈</Link>
+          <Link href={CHAMPION_PAGE}>챔피언 목록</Link>
+          <Link href={ITEM_PAGE}>아이템 목록</Link>
+          <Link href={ROTATION_PAGE}>챔피언 로테이션</Link>
         </header>
         <Provider>{children}</Provider>
       </body>

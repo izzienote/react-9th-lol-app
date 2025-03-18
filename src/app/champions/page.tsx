@@ -12,9 +12,11 @@ const ChampionList = async () => {
   const championListData = await fetchChampionList();
 
   return (
-    <div className=" bg-black">
-      <h1 className="text-red-500">챔피언 목록</h1>
-      <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-7 gap-5">
+    <div className=" bg-black py-20">
+      <h1 className="text-red text-2xl flex justify-center mb-10">
+        챔피언 목록
+      </h1>
+      <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-7 gap-5 px-10 ">
         {championListData.map((champion) => (
           <ChampionCard key={champion.id} data={champion} />
         ))}

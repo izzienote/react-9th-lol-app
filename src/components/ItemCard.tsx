@@ -11,19 +11,20 @@ const ItemCard = ({ item }: ItemProps) => {
   const cleanText = item.description.replace(/<\/?[^>]+(>|$)/g, "");
 
   return (
-    <article className="flex flex-col justify-start items-center border rounded p-4 hover:shadow-lg max-h-96 overflow-y-auto">
+    <article className="flex flex-col justify-start items-center border-4 border-yellow bg-yellowbrown rounded p-4 hover:shadow-lg max-h-96 overflow-y-auto active:scale-105 ease-in-out duration-200">
       <figure>
         <Image
           width={100}
           height={100}
           src={`${ITEM_IMAGE_URL}${item.image.full}`}
           alt="아이템 이미지"
+          priority
         />
       </figure>
-      <div className="text-red-500">{item.name}</div>
-      <div className="text-green-500">살때 : {item.gold.total}</div>
-      <div className="text-green-500">팔때 : {item.gold.sell}</div>
-      <div className="text-purple-500">{cleanText}</div>
+      <div className="text-red text-lg mt-5 mb-5">{item.name}</div>
+      <div className="text-green">살때 : {item.gold.total}</div>
+      <div className="text-green">팔때 : {item.gold.sell}</div>
+      <div className="text-purple">{cleanText}</div>
     </article>
   );
 };
