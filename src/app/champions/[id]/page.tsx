@@ -1,5 +1,5 @@
 import SpellCard from "@/components/SpellCard";
-import { fetchChampionDetail } from "@/utils/serverApi";
+import { fetchChampionDetail, fetchLatestVersion } from "@/utils/serverApi";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 
 const ChampionDetailPage = async ({ params }: Props) => {
   const fetchData = await fetchChampionDetail(params.id);
+  const version = await fetchLatestVersion();
 
   return (
     <div className="bg-black flex flex-col justify-center items-center py-20">
@@ -26,7 +27,7 @@ const ChampionDetailPage = async ({ params }: Props) => {
       <Image
         width={100}
         height={100}
-        src={`https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${fetchData.image.full}`}
+        src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${fetchData.image.full}`}
         alt="챔피언 이미지"
         priority
         className="mb-10"
