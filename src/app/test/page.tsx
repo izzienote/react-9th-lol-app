@@ -1,7 +1,8 @@
+import React from "react";
 import LodaingSkeletion from "@/components/LodaingSkeletion";
 
-const Loading = () => {
+const page = () => {
   return <LodaingSkeletion />;
 };
 
-export default Loading;
+export default page;

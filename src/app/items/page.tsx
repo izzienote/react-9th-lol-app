@@ -12,7 +12,7 @@ const ItemList = async () => {
   const itemList = await fetchItemList();
 
   return (
-    <div className=" bg-black py-20">
+    <div className=" bg-darkblue2 py-20">
       <h1 className="text-red text-2xl flex justify-center mb-10">
         아이템 목록
       </h1>

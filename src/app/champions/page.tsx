@@ -12,7 +12,7 @@ const ChampionList = async () => {
   const championListData = await fetchChampionList();
 
   return (
-    <div className=" bg-black py-20">
+    <div className=" bg-darkblue2 py-20">
       <h1 className="text-red text-2xl flex justify-center mb-10">
         챔피언 목록
       </h1>
